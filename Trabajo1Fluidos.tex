@@ -1,0 +1,249 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{lipsum}
+\usepackage{enumerate} 
+\renewcommand{\labelitemii}{$\cdot$}
+\usepackage{float}
+\graphicspath{ {images/} }
+% \floatstyle{boxed} 
+% \restylefloat{figure}
+
+\begin{document}
+
+\begin{center}
+{\Huge Mecánica de Fluidos II}
+\end{center}
+
+
+\begin{center}
+{\Large Trabajo I: Capa límite}
+\end{center}
+\begin{center}
+{\Large  \textbf {1. Capa límite sobre un cuerpo de revolución}}
+\end{center}
+ 
+Considérense las ecuaciones de la capa límite sobre el cuerpo de revolución esquematizado de la figura contorno está definido por el radio $R(x)$ de las ecuaciones normales a su eje:
+
+%dibujo
+
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=4in]{figura1}
+  \caption{Pedazo de trabajo que le estoy haciendo al saborid}
+  % {Close up of \textit{Hemidactylus} sp., which is
+  % part the genus of the gecko family. It is the
+  % second most speciose genus in the family.}
+\end{figure}
+
+
+
+\begin{equation}
+\frac{(R(x)\, v_{s})}{\partial x} + \frac{\partial (R(x)\, v_{y})}{\partial y}=0,
+\end{equation}
+\begin{equation}
+v_{x} \frac{\partial v_{x}}{\partial x} + v_{y} \frac{\partial v_{x}}{\partial y}= v_{e} \frac{d v_{e}}{d x} + \nu \frac{\partial^{2} v_{x}}{\partial y^{2}},
+\end{equation}
+junto con las condiciones de contorno
+\begin{equation}
+v_{y}(x,y=0)=0,\;\;\;\;v_{x}(x,y=0)=0,
+\end{equation}
+\begin{equation}
+v_{x}(x,y\rightarrow \infty)=v_{se}(x), \;\;\; v(x=x_{0},y)=v_{x_{0}}(y).
+\end{equation}
+\\
+
+Obsérvese que el factor $r(x)$ que aparece en la ecuación de continuidad multiplicando a las componentes de la velocidad es debido, como se verá en el apartado 1, a la simetría de revolución del flujo (flujo axilsimétrico), y no aparecería si se tratase de una capa límite bidimensional. Para la resolución de las ecuaciones de la capa límite es conveniente, primero, integrar respecto de y la ecuación de continuidad (1) que, puesto que $R$ sólo depende de x proporciona:
+\begin{equation}
+v_{y}=-\frac{1}{R(x)}\, \int_{o}^{y} dy\, \frac{\partial (R\, v_{x})}{\partial x},
+\end{equation}
+y, seguidamente, introducir las variables adimensionales
+\begin{equation}
+x=a\xi, \;\; y=\sqrt{\frac{\nu a}{U_{\infty}}}\eta, \;\; v_{x}=U_{\infty} u, \;\; v_{se}=U_{\infty} u_{e}, \;\; R=ar
+\end{equation}
+en términos de las cuales la ecuación de cantidad de movimiento (2) se escribe, tras introducir la expresión (5) para $v_{y}$,
+
+\begin{equation}
+u\frac{\partial u}{\partial \eta}-\frac{1}{r(\xi)} \frac{\partial u}{\partial \eta} \int_{0}^{\eta}d \eta \frac{\partial (ru)}{\partial \eta }=u_{e}\frac{d\, u_{e}}{d \eta} + \frac{\partial^{2} u}{\partial \eta^{2}}
+\end{equation}
+y las condiciones de contorno para $u$, que resulta de (3) y (4), se escriben
+\begin{equation}
+u(\xi,\eta=0)=0,\;\;\;\; u(\xi, \eta \rightarrow \infty)=u_{e},\;\;\;\; u(\xi=\xi_{0},\eta)=u_{0}(\eta)
+\end{equation}
+\\
+Se pide:
+\\
+
+1. (\textbf {OPCIONAL}) Demostrar, mediante balances de masa y de cantidad de movimiento aplicados a un volumen diferencial adecuado a la simetría de revolución del problema que, en primera aproximación, las ecuaciones y condiciones de contorno que gobiernan el campo de velocidades en la capa límite son (1)-(4).
+\\
+
+2. Para el caso de una esfera de radio a, intégrese el sistema formado por la ecuación y condiciones de contorno (7)-(8) mediante el método de líneas suponiendo que la corriente exterior para la capa límite está dada por $u_{e}(\xi)=3/2sin(\xi)$. En particular, determinar el punto de desprendimiento de la capa límite, $\eta_{s}$, dibujar los perfiles de velocidades en la capa límite, $u=v_{x}/U_{\infty}$ como función y/a (para algún valor dado del número de Reynolds $Re=U_{\infty} a/\nu$ correspondiente a una cpa límite en régimen laminar), para varias estaciones $\xi$ comprendidas entre $\xi_{0}$ y $\xi_{s}$, incluyendo el correspondiente al punto de desprendimiento. Calcúlese también el coeficiente de resistencia, indicando las contribuciones al mismo de los coeficientes de resistencia de forma (presión) y de fricción, respectivamente; compárense los resultados obtenidos con los reportados en la literatura (véase, por ejemplo, el libro "Mecánica de Fluidos" de F.M. White).
+\\
+
+3. Obténgase la evolución de la capa límite sobre una esfera, el punto de desprendimiento y el coeficiente de resistencia considerando la distribución de presiones de la corriente exterior medida experimentalmente y expresada mediante la línea de trazos de la figura (la línea de trazos llena representa la distribución del flujo ideal). Compárense los resultados con los del libro de White.
+\\
+
+
+%Dibujo
+
+4. Si la corriente incidente se encuentra a una temperatura $T_{0}$ distinta de la superficie de la esfera elipsoide, $T_{p}$, formular ecuación que deterimina el campo de temperaturas e intégrese por el método de líneas conjuntamento con las del apartado 1. Para el caso consideado en el apartado anterior (corriente experiemntel), dibujar los perfiles de temperatura en al capa límite para varias estaciones $\xi$ comprendidas entre $\xi_{0}$ y $\xi_{s}$ y, para cada valor $t$ represénte el coeficiente de película como función de $\xi$. Calcular también el número de Nusselt global y Compárense los redultados con alguna correlación apropiada el flujo considerado en este ejercicio, que puede consultarse en alguna referencia sobre transmisión de calor. Considérense por separado los casos del agua y del aire.
+\\
+
+
+5. (\textb{OPCIONAL}) Analizar los efectos de la fricción (número de Eckert) en los perfiles de temperatura del apartado anterior.
+\\
+\begin{center}
+{\Large  \textbf {2. Capa límite sobre perfiles NACA}}
+\end{center}
+\\
+
+Calcular el campo de velocidades longitudinales y representarlo como función de y/a, donde la longitud característica $a$ se define en este caso como la cuerda del perfil, para varios valores de $\xi=x/a$ (para algún valor dado del número de Reynolds $Re=U_{\infty} a/\nu$ (incluido el correspondiente punto de desprendimiento $\xi_{s}$) para cada uno de los siguientes perfiles NACA:
+\fontdimen2\font= 1.5em
+
+\vspace{1cm}
+1. NACA0005:
+\\
+
+\hspace{1cm}
+$\xi$=[0 0.01 0.03 0.06 0.11 0.16 0.23 0.30 0.38 0.46 0.54 0.63 0.70 0.78 0.84 0.90 0.94 0.98 0.99 1.00]
+\\
+
+$c_{p}(\xi)$=[1 -0.15 -0.17 -0.18 -0.18 -0.17 -0.16 -0.14 -0.12 -0.10 -0.09 -0.07 -0.05 -0.03 -0.01 0.01 0.04 0.08 0.13 1.00]
+\\
+
+2. NACA0012:
+\\
+
+\hspace{1cm}
+$\xi$=[0 0.02 0.04 0.07 0.12 0.18 0.24 0.31 0.39 0.47 0.56 0.64 0.72 0.79 0.86 0.91 0.96 0.99 1.01 1.02]
+\\
+
+$c_{p}(\xi)$=[1 0.12 -0.28 -0.39 -0.42 -0.41 -0.38 -0.34 -0.30 -0.25 -0.20 -0.16 -0.11 -0.07 -0.02 0.03 0.09 0.18 0.29 1.00]
+\\
+
+3. NACA0018:
+\\
+
+\hspace{1cm}
+$\xi$=[0 0.02 0.05 0.09 0.13 0.19 0.26 0.33 0.41 0.49 0.57 0.65 0.73 0.81 0.87 0.93 0.98 1.01 1.03 1.04]
+\\
+
+$c_{p}(\xi)$=[1 0.37 -0.28 -0.54 -0.63 -0.63 -0.60 -0.53 -0.46 0.38 -0.30 -0.23 -0.16 -0.09 -0.02 0.05 0.14 0.25 0.40 1.00]
+\fontdimen2\font= 0.35em
+\hspace{1cm}
+\\
+
+Supóngase que, en primera aproximación, cada perfil puede considerarse como una placa plana sobre la que la corriente circula sometida a un gradiente de presione determindado por el correspodiente $c_{p}(\xi)$. Calcular también en cada caso el coeficiente de resistencia del perfil, $C_{d}$ suponiéndo que ésta se debe sólo a fricción, y compararlo con valores reportados en la literatura.
+
+\newpage
+
+Antes de comenzar a el estudio de la capa límite se hará una introducción de las ecuaciones particularizadas según la importancia relativa de los términos en las ecuaciones de Navier-Stokes para los fluidos.
+
+\\
+
+Partiendo de las ecuaciones de Navier-Stokes,
+
+\vspace{1cm}
+
+
+Ecuación de conservación de masa:
+
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho v)=0
+\end{equation}
+
+\\
+
+Ecuación de conservación de movimiento:
+
+\begin{equation}
+\frac{ \partial (\rho v) }{\partial{t}} + \rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v + f_{m}
+\end{equation}
+\\
+
+y teniendo en cuenta las siguientes hipótesis:
+\vspace{1cm}
+
+\begin{enumerate}[\hspace*{0.5cm}]
+\item[$\bullet$] Fluido con densidad $\rho$ constante, viscosidad $\mu$  y conductividad $\kappa$.
+\item[$\bullet$] Movimiento estacionario alrededor del cuerpo.
+\item[$\bullet$] Fuerzas másicas despreciables.
+\item[$\bullet$] Efecos de compresibilidad despreciables.
+\item[$\bullet$] Flujos a altos números de Reynolds: $Re=\frac{U_{\infty} a}{\nu} \gg 1 $
+\end{enumerate}
+
+\vspace{1cm}
+
+
+Las ecuaciones de conservación de masa y cantidad de movimiento quedarán así:
+
+\begin{equation}
+\nabla \cdot v=0
+\end{equation}
+
+Donde se ha tenido en cuenta que $St\approx 0$ y $\rho \approx$ constante.
+
+\begin{equation}
+\rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v 
+\end{equation}
+
+Donde se ha tenido en cuenta que $St \approx 0$, $\rho \approx$ constante y fuerzas másicas despreciables ($f_{m}$).
+
+\\
+
+Se va a realizar ahora adecuación de las ecuaciones de Navier-Stokes al estudio de del flujo a 
+
+
+
+\newpage
+\begin{center}
+  {\Large Método de líneas}
+\end{center}
+
+Para resolver las ecuaciones de la capa límite se ultiliza en método de líneas. Para ello hay que discretizar el dominio fluido mediante líneas paralelas a los ejes locales $x$ e $y$ definidos de forma que el eje $x$ es tangente a la superficie con sentido el de la corriente incidente y el eje $y$ es normal exterior a la superficie del objeto analizado.
+
+\\
+
+El objetivo principal de este método es conocer el perfil de velodidades tangenciales correspodientes a cada línea definida en la discretización que se haya elegido. Esta discretización será más precisa según el valor de h que se elija en cada ocasión.
+
+\\
+
+Sabiendo que las ecuaciones que gobiernan el movimiento de un fluido alrededor de un cuerpo de revolución (elipse) son:
+
+\\
+
+
+
+\[\frac{(R(x)\, \hat{v}_{s})} {\partial \hat{x}} + \frac{\partial (R(x)\, \hat{v}_{y}}{\partial \hat{y}}}=0\]
+
+\[v_{x} \frac{\partial \hat{v}_{x}}{\partial \hat{x}} + \hat{v}_{y} \frac{\partial \hat{v}_{x}}{\partial \hat{y}}= v_{e} \frac{d \hat{v}_{e}}{d \hat{x}} + \nu \frac{\partial^{2} \hat{v}_{x}}{\partial \hat{y}^{2}}\]
+
+junto con las condiciones de contorno:
+
+\[\hat{v}_{y}(\hat{x},\hat{y}=0)=0,\;\;\;\;\hat{v}_{x}(\hay{x},\hat{y}=0)=0\]
+
+
+\[\hat{v}_{x}(\hat{x},\hat{y}\rightarrow \infty)=\hat{v}_{se}(x), \;\;\; v_{x}(\hat{x}=x_{0},\hat{y})=v_{x_{0}}(y)\]
+
+El \"gorrito\" de las variables en las ecuaciones indica que son variables físicas adimensionalizadas de acuerdo a los órdenes de magnitud antes mencionados. Se ha supuesto que por ejemplo se desprecien el gradiente de presiones en la dirreción transversal y que sólo se tenga en cuenta el término en la dirección transversal debido a que la dimensión de la capa límite es muy pequeño con respecto a a. Cabe destacar que el término de la velocidad exterior 
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=3in]{figura2}
+  \caption{Perfil de velocidades}
+  % {Close up of \textit{Hemidactylus} sp., which is
+  % part the genus of the gecko family. It is the
+  % second most speciose genus in the family.}
+\end{figure}
+
+
+\end{document}
+
