@@ -145,6 +145,34 @@ Supóngase que, en primera aproximación, cada perfil puede considerarse como un
 
 \newpage
 
+1. (\textbf {OPCIONAL}) Demostrar, mediante balances de masa y de cantidad de movimiento aplicados a un volumen diferencial adecuado a la simetría de revolución del problema que, en primera aproximación, las ecuaciones y condiciones de contorno que gobiernan el campo de velocidades en la capa límite son (1)-(4).
+\vspace{1cm}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=4in]{figura1}
+  \caption{Pedazo de trabajo que le estoy haciendo al saborid}
+  % {Close up of \textit{Hemidactylus} sp., which is
+  % part the genus of the gecko family. It is the
+  % second most speciose genus in the family.}
+\end{figure}
+
+
+Dada la figura anterior se elegirá como superficie de revolución un elipsoide, para simplificar los cálculos que tendrá de ecuación:
+\[\frac{X^{2}}{a^2}+\frac{R^{2}}{b^2}=1\]
+
+%dibujo
+
+
+Donde $R(X)^{2} = Y^{2}+Z^{2}$ y $b = c$ (planos paralelos a $X=0$ forman circunferencias al cortar con el elipsoide) ambos menores que $a$. El semieje mayor está situado a lo largo del eje x.
+
+
+%dibujo elipse
+
+
+
+
+
 Antes de comenzar a el estudio de la capa límite se hará una introducción de las ecuaciones particularizadas según la importancia relativa de los términos en las ecuaciones de Navier-Stokes para los fluidos.
 
 \\
@@ -156,17 +184,16 @@ Partiendo de las ecuaciones de Navier-Stokes,
 
 Ecuación de conservación de masa:
 
-\begin{equation}
-\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho v)=0
-\end{equation}
+
+\[\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho v)=0\]
 
 \\
 
 Ecuación de conservación de movimiento:
 
-\begin{equation}
-\frac{ \partial (\rho v) }{\partial{t}} + \rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v + f_{m}
-\end{equation}
+
+\[\frac{ \partial (\rho v) }{\partial{t}} + \rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v + f_{m}\]
+
 \\
 
 y teniendo en cuenta las siguientes hipótesis:
@@ -185,25 +212,46 @@ y teniendo en cuenta las siguientes hipótesis:
 
 Las ecuaciones de conservación de masa y cantidad de movimiento quedarán así:
 
-\begin{equation}
-\nabla \cdot v=0
-\end{equation}
+
+\[nabla \cdot v=0\]
+
 
 Donde se ha tenido en cuenta que $St\approx 0$ y $\rho \approx$ constante.
 
-\begin{equation}
-\rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v 
-\end{equation}
+
+\[rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v \]
+
 
 Donde se ha tenido en cuenta que $St \approx 0$, $\rho \approx$ constante y fuerzas másicas despreciables ($f_{m}$).
 
 \\
 
-Se va a realizar ahora adecuación de las ecuaciones de Navier-Stokes al estudio de del flujo a 
+Estas ecuaciones pueden ponerse una vez particularizadas en forma integral resultando:
 
+\[\int_{\Sigma_{c}} \rho \vec{v} \, \vec{n} d\sigma=0\]
 
+\[\int_{\Sigma_{c}} \rho \vec{v}^{2} \, \vec{n} d\sigma = \int_{\Sigma{f}} \bar{\bar{\tau}}' \,  \vec{n} d\sigma\]
+
+Tomando un volumen de control apropiado formado por las superficies $\Sigma_{x}$, $\Sigma_{x+dx}$, $\Sigma_{y}$, $\Sigma_{y+dy}$:
+\[\Sum_{i} \rho v_{i} \Sigma_{i}= 0 \Rightarrow v_{x|x+dx} \Sigma_{x+dx} + v_{y|y+dy} \Sigma_{y+dy}=v_{x|x} + v_{y|y} \Sigma_{y}\]
+
+Utilizando un desarrolo en serie de Taylor se obtiene:
+\begin{multline*}
+\displaystyle 2\pi\left(  v_{x} + \frac{\partial v_{x}}{\partial{x}}dx\right) \left( (R(x) + \epsilon)+\frac{\partial(R(x)+\epsilon)}{\partial{x}}dx \right) dy + 2\pi \left( v_{y} + \frac{\partial{v_{y}}}{\partial{y}} dy \right) \left( (R(x)+\epsilon) + \frac{\partial(R(x)+\epsilon)}{\partial y} dy \right) dx= \\=
+2\pi v_{x}( R(x)+\epsilon)dy + 2\pi v_{y}(R(x)+\epsilon)dx
+\end{multline*} 
+
+Desarrollando los productos anteriores y eliminando los infinitésimos de orden superior, la ecuación anterior se reduce a:
+
+\[\frac{(R(x)+\epsilon) v_{x}}{\partial {x}} + \frac{\partial(R(x) + \epsilon) v_{y}}{\partial y}=0\]
+
+Como $R(x) \gg \epsilon$ se obtiene la expresión:
+\[\frac{(R(x)\, v_{s})}{\partial x} + \frac{\partial (R(x)\, v_{y})}{\partial y}=0\]
 
 \newpage
+
+
+
 \begin{center}
   {\Large Método de líneas}
 \end{center}
@@ -246,4 +294,5 @@ El \"gorrito\" de las variables en las ecuaciones indica que son variables físi
 
 
 \end{document}
+
 
