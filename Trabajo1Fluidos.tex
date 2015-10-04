@@ -9,6 +9,7 @@
 \usepackage{subcaption}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{lipsum}
+\usepackage{soul} 
 \usepackage{enumerate} 
 \renewcommand{\labelitemii}{$\cdot$}
 \usepackage{float}
@@ -38,7 +39,7 @@ Considérense las ecuaciones de la capa límite sobre el cuerpo de revolución e
 \begin{figure}[hb]
   \centering
   \includegraphics[width=4in]{figura1}
-  \caption{Pedazo de trabajo que le estoy haciendo al saborid}
+%  \caption{Pedazo de trabajo que le estoy haciendo al saborid}
   % {Close up of \textit{Hemidactylus} sp., which is
   % part the genus of the gecko family. It is the
   % second most speciose genus in the family.}
@@ -85,7 +86,7 @@ Se pide:
 1. (\textbf {OPCIONAL}) Demostrar, mediante balances de masa y de cantidad de movimiento aplicados a un volumen diferencial adecuado a la simetría de revolución del problema que, en primera aproximación, las ecuaciones y condiciones de contorno que gobiernan el campo de velocidades en la capa límite son (1)-(4).
 \\
 
-2. Para el caso de una esfera de radio a, intégrese el sistema formado por la ecuación y condiciones de contorno (7)-(8) mediante el método de líneas suponiendo que la corriente exterior para la capa límite está dada por $u_{e}(\xi)=3/2sin(\xi)$. En particular, determinar el punto de desprendimiento de la capa límite, $\eta_{s}$, dibujar los perfiles de velocidades en la capa límite, $u=v_{x}/U_{\infty}$ como función y/a (para algún valor dado del número de Reynolds $Re=U_{\infty} a/\nu$ correspondiente a una cpa límite en régimen laminar), para varias estaciones $\xi$ comprendidas entre $\xi_{0}$ y $\xi_{s}$, incluyendo el correspondiente al punto de desprendimiento. Calcúlese también el coeficiente de resistencia, indicando las contribuciones al mismo de los coeficientes de resistencia de forma (presión) y de fricción, respectivamente; compárense los resultados obtenidos con los reportados en la literatura (véase, por ejemplo, el libro "Mecánica de Fluidos" de F.M. White).
+2. Para el caso de una esfera de radio a, intégrese el sistema formado por la ecuación y condiciones de contorno (7)-(8) mediante el método de líneas suponiendo que la corriente exterior para la capa límite está dada por $u_{e}(\xi)=3/2\sin(\xi)$. En particular, determinar el punto de desprendimiento de la capa límite, $\eta_{s}$, dibujar los perfiles de velocidades en la capa límite, $u=v_{x}/U_{\infty}$ como función y/a (para algún valor dado del número de Reynolds $Re=U_{\infty} a/\nu$ correspondiente a una cpa límite en régimen laminar), para varias estaciones $\xi$ comprendidas entre $\xi_{0}$ y $\xi_{s}$, incluyendo el correspondiente al punto de desprendimiento. Calcúlese también el coeficiente de resistencia, indicando las contribuciones al mismo de los coeficientes de resistencia de forma (presión) y de fricción, respectivamente; compárense los resultados obtenidos con los reportados en la literatura (véase, por ejemplo, el libro "Mecánica de Fluidos" de F.M. White).
 \\
 
 3. Obténgase la evolución de la capa límite sobre una esfera, el punto de desprendimiento y el coeficiente de resistencia considerando la distribución de presiones de la corriente exterior medida experimentalmente y expresada mediante la línea de trazos de la figura (la línea de trazos llena representa la distribución del flujo ideal). Compárense los resultados con los del libro de White.
@@ -98,12 +99,14 @@ Se pide:
 \\
 
 
-5. (\textb{OPCIONAL}) Analizar los efectos de la fricción (número de Eckert) en los perfiles de temperatura del apartado anterior.
-\\
+5. \textbf{(OPCIONAL)} Analizar los efectos de la fricción (número de Eckert) en los perfiles de temperatura del apartado anterior.
+
+
+
 \begin{center}
 {\Large  \textbf {2. Capa límite sobre perfiles NACA}}
 \end{center}
-\\
+
 
 Calcular el campo de velocidades longitudinales y representarlo como función de y/a, donde la longitud característica $a$ se define en este caso como la cuerda del perfil, para varios valores de $\xi=x/a$ (para algún valor dado del número de Reynolds $Re=U_{\infty} a/\nu$ (incluido el correspondiente punto de desprendimiento $\xi_{s}$) para cada uno de los siguientes perfiles NACA:
 \fontdimen2\font= 1.5em
@@ -121,7 +124,6 @@ $c_{p}(\xi)$=[1 -0.15 -0.17 -0.18 -0.18 -0.17 -0.16 -0.14 -0.12 -0.10 -0.09 -0.0
 
 2. NACA0012:
 \\
-
 \hspace{1cm}
 $\xi$=[0 0.02 0.04 0.07 0.12 0.18 0.24 0.31 0.39 0.47 0.56 0.64 0.72 0.79 0.86 0.91 0.96 0.99 1.01 1.02]
 \\
@@ -151,7 +153,7 @@ Supóngase que, en primera aproximación, cada perfil puede considerarse como un
 \begin{figure}[hb]
   \centering
   \includegraphics[width=4in]{figura1}
-  \caption{Pedazo de trabajo que le estoy haciendo al saborid}
+%  \caption{Pedazo de trabajo que le estoy haciendo al saborid}
   % {Close up of \textit{Hemidactylus} sp., which is
   % part the genus of the gecko family. It is the
   % second most speciose genus in the family.}
@@ -175,7 +177,7 @@ Donde $R(X)^{2} = Y^{2}+Z^{2}$ y $b = c$ (planos paralelos a $X=0$ forman circun
 
 Antes de comenzar a el estudio de la capa límite se hará una introducción de las ecuaciones particularizadas según la importancia relativa de los términos en las ecuaciones de Navier-Stokes para los fluidos.
 
-\\
+\vspace{0.5cm}
 
 Partiendo de las ecuaciones de Navier-Stokes,
 
@@ -187,14 +189,13 @@ Ecuación de conservación de masa:
 
 \[\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho v)=0\]
 
-\\
-
+\vspace{0.5cm}
 Ecuación de conservación de movimiento:
 
 
 \[\frac{ \partial (\rho v) }{\partial{t}} + \rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v + f_{m}\]
 
-\\
+\vspace{0.5cm}
 
 y teniendo en cuenta las siguientes hipótesis:
 \vspace{1cm}
@@ -213,13 +214,13 @@ y teniendo en cuenta las siguientes hipótesis:
 Las ecuaciones de conservación de masa y cantidad de movimiento quedarán así:
 
 
-\[nabla \cdot v=0\]
+\[\nabla \cdot v=0\]
 
 
 Donde se ha tenido en cuenta que $St\approx 0$ y $\rho \approx$ constante.
 
 
-\[rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v \]
+\[\rho v \cdot \nabla v = -\nabla p + \mu \nabla^{2} v \]
 
 
 Donde se ha tenido en cuenta que $St \approx 0$, $\rho \approx$ constante y fuerzas másicas despreciables ($f_{m}$).
@@ -247,6 +248,26 @@ Desarrollando los productos anteriores y eliminando los infinitésimos de orden 
 
 Como $R(x) \gg \epsilon$ se obtiene la expresión:
 \[\frac{(R(x)\, v_{s})}{\partial x} + \frac{\partial (R(x)\, v_{y})}{\partial y}=0\]
+
+\noindent{que corresponde con la ecuación (1), mostrada al inicio de la cuestión.}
+
+\vspace{0.5cm}
+
+A continuación se realizará una estimación de la longitud de la capa límite. Para ello se tomará como longitudes características $x_{c}\,~a\,$, e $y_{c}\, \delta_{c}$ y suponiendo que el espesor de la capa límite es pequeño con respecto a la longitud característica del objeto $\delta_{c} \ll a$ lo cual implica que $v_{y} \ll U_{\infty}$:
+
+
+
+\begin{equation*}
+\begin{cases}
+& \frac{\partial{v_{x}}}{\partial x }\, \sim \frac{\Delta_{x_{c}} \, v_{x}}}{x_{c}}\, \sim \frac{ a \, U_{\infty}}{a}
+& \frac{\partial v_{x}}{\partial y} \, \sim \frac{Δ_{y_{c}}}{y_{c}} \, \sim \frac{U_{\infty}}{\delta_{c}}
+
+& \frac{\partial{v_{y}}}{\partial{y}}  \, \sim \frac{\Delta_{x_{c}}}{x_{c}}\, \sim 
+\end{cases}
+
+\end{equation*}
+
+
 
 \newpage
 
@@ -294,5 +315,3 @@ El \"gorrito\" de las variables en las ecuaciones indica que son variables físi
 
 
 \end{document}
-
-
